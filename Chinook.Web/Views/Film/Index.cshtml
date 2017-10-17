@@ -1,0 +1,44 @@
+﻿@using System.Globalization
+@using Chinook.Model;
+@model IEnumerable<Chinook.Model.Film>
+
+@{
+    ViewBag.Title = "Movies";
+    Layout = "_Layout";
+}
+
+<h2>Movies</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-responsive table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title </th>
+                    <th>Description </th>
+                    <th>Duration </th>
+                    <th>Price </th>
+                    <th>Year </th>
+                    <th>Last Update </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><a asp-controller="Film" asp-action="Details" asp-route-filmId="@item.Id">@item.Id</a></td>
+                        <td>@item.Title</td>        
+                        <td>@item.Description</td>        
+                        <td>@TimeSpan.FromMinutes(item.Length)</td>        
+                        <td>@item.Cost.ToString("c",CultureInfo.CreateSpecificCulture("en-US"))</td>        
+                        <td>@item.ReleaseYear</td>        
+                        <td>@item.ModifiedAt.ToString("MMM ddd d yyyy")</td>        
+                    </tr>
+                }        
+                </tbody>
+            </table>    
+            
+        </div>
+    </div>    
+</div>

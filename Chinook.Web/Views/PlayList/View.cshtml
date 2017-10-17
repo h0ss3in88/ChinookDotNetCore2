@@ -1,0 +1,55 @@
+﻿@using System.Globalization
+@model Chinook.Model.PlayList
+
+@{
+    ViewBag.Title = "PlayList:Details";
+    Layout = "_Layout";
+}
+<article class="container-fluid">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>@Model.Id</td>
+                        <td>@Model.Name</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-9">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Composer</th>
+                        <th>Duration</th>
+                        <th>Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.Tracks)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Composer</td>
+                            <th>@item.Duration Min</th>
+                            <td>@item.Price.ToString("c",CultureInfo.CurrentUICulture)</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+
+            </div>
+        </div> 
+    </section>
+</article>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Chinook.Model.Album>
+
+@{
+    ViewBag.Title = "Albums";
+    Layout = "_Layout";
+}
+
+<h2>Albums</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-12">
+             <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var album in Model)
+                {
+                    <tr>
+                        <td>@album.Id</td>
+                        <td>@album.Title</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div></div>

@@ -1,0 +1,70 @@
+﻿@using System.Globalization
+@model Chinook.Model.Film
+
+@{
+    ViewBag.Title = "Chinook:Film Details";
+    Layout = "_Layout";
+}
+<blockquote>
+    <h4>@Model.Title</h4>
+</blockquote>
+<blockquote>
+    <p>@Model.Description</p>
+    <small>@Model.Actors.Count()<cite>Actors</cite></small>
+</blockquote>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6">
+                <table class="table table-responsive table-striped">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>@Model.Title</td>
+                        <td>@Model.Description</td>
+                        <td>@Model.Length</td>
+                        <td>@Model.ReleaseYear</td>
+                        <td>@Model.Cost.ToString("c",CultureInfo.CurrentUICulture)</td>
+                        <td>@Model.Category.Name</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <table class="table table-responsive table-striped">
+                    <thead>
+                    <tr>
+                        <th>Actors #@Model.Actors.Count</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var actor in Model.Actors)
+                    {
+                        <tr>
+                            <td><a asp-controller="Actor" asp-action="Details" asp-route-actorId="@actor.Id">@actor.Id</a></td>
+                            <td>@actor.FirstName</td>
+                            <td>@actor.LastName</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

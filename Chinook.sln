@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinook.Model", "Chinook.Model\Chinook.Model.csproj", "{39E303F4-4C57-4FE9-96A7-83C677728DD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinook.Web", "Chinook.Web\Chinook.Web.csproj", "{26F980E3-AEA6-40CF-AD8D-1EE798EB4F83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinook.Test", "Chinook.Test\Chinook.Test.csproj", "{6C967E0F-DC19-44EE-B286-AC65CA449B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinook.Console", "Chinook.Console\Chinook.Console.csproj", "{383EC25F-B361-433A-85E8-4E32C42D7B08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39E303F4-4C57-4FE9-96A7-83C677728DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39E303F4-4C57-4FE9-96A7-83C677728DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39E303F4-4C57-4FE9-96A7-83C677728DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39E303F4-4C57-4FE9-96A7-83C677728DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F980E3-AEA6-40CF-AD8D-1EE798EB4F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F980E3-AEA6-40CF-AD8D-1EE798EB4F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F980E3-AEA6-40CF-AD8D-1EE798EB4F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F980E3-AEA6-40CF-AD8D-1EE798EB4F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C967E0F-DC19-44EE-B286-AC65CA449B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C967E0F-DC19-44EE-B286-AC65CA449B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C967E0F-DC19-44EE-B286-AC65CA449B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C967E0F-DC19-44EE-B286-AC65CA449B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{383EC25F-B361-433A-85E8-4E32C42D7B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{383EC25F-B361-433A-85E8-4E32C42D7B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{383EC25F-B361-433A-85E8-4E32C42D7B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{383EC25F-B361-433A-85E8-4E32C42D7B08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

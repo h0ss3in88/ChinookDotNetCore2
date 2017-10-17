@@ -1,0 +1,49 @@
+﻿@model Chinook.Model.Artist
+
+@{
+    ViewBag.Title = "Artist";
+    Layout = "_Layout";
+}
+
+<h2>Artist</h2>
+<article class="container-fluid">
+    <section class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12">
+            <h1>Artists</h1>
+            <a asp-controller="Artist" asp-action="Add" class="btn btn-success btn-sm">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                New Artist
+            </a>
+            <a asp-controller="Artist" asp-action="Edit" class="btn btn-info btn-sm">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                Edit Artist
+            </a>
+            <a asp-controller="Artist" asp-action="Remove" class="btn btn-danger btn-sm">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                Remove Artist
+            </a>
+        </div>       
+    </section>
+    <section class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12">
+            <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Albums</th>
+                    <th>View Albums </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Albums.Count</td>
+                    <td><a asp-controller="Album" asp-action="View" asp-route-artistId="@Model.Id">View Albums</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>

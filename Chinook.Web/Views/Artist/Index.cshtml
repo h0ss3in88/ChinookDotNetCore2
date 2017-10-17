@@ -1,0 +1,33 @@
+﻿@using Chinook.Model
+@model IEnumerable<Chinook.Model.Artist>
+
+@{
+    ViewBag.Title = "Chinook:Artist";
+    Layout = "_Layout";
+}
+<h2>Artists</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-responsive table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Artist Id</th>
+                    <th>Name </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><a asp-controller="Artist" asp-action="View" asp-route-id="@item.Id">@item.Id</a></td>
+                        <td>@item.Name</td>        
+                    </tr>
+                }        
+                </tbody>
+            </table>    
+            
+        </div>
+    </div>    
+</div>
+

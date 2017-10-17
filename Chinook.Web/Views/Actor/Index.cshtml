@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Chinook.Model.Actor>
+@{
+    ViewBag.Title = "Chinook:Actors";
+    Layout = "_Layout";
+}
+<article class="container-fluid">
+    <section class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12">
+            <h1>Actors</h1>
+            <a asp-controller="Actor" asp-action="Add" class="btn btn-success btn-sm">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                New Actor
+            </a>
+        </div>       
+    </section>
+    <section class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12">
+            <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Films</th>
+                    <th>Perform Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var actor in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="Actor" 
+                               asp-action="Details" 
+                               asp-route-actorId="@actor.Id"
+                            >
+                                @actor.Id
+                            </a>
+                        </td>
+                        <td>@actor.FirstName</td>
+                        <td>@actor.LastName</td>
+                        @{
+                            if (actor.Films != null)
+                            {
+                                <td>@actor.Films.Count()</td>
+                            }
+                        }
+                        <td>
+                            <a class="btn btn-sm btn-info">View</a> |
+                            <a asp-controller="Actor" 
+                               asp-action="Edit" 
+                               asp-route-actorId="@actor.Id" class="btn btn-sm btn-success">Edit</a> |
+                            <a class="btn btn-sm btn-danger" 
+                               asp-controller="Actor" 
+                               asp-action="Remove" 
+                               asp-route-actorId="@actor.Id">Remove</a> 
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
